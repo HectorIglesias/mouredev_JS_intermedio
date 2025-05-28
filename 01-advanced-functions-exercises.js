@@ -96,10 +96,42 @@ function mostrar_resultado(resultado){
 principal(mostrar_resultado, 1,2,3,4,5)
 principal(mostrar_resultado, 1,3,4,5)
 
+console.log("\n\nEjercicio 7")
 // 7. Desarrolla una función parcial
+function mensaje_parcial(cadena1){
+    return function (cadena2){
+        return cadena1 +" "+ cadena2
+    }
+}
 
-// 8. Implementa un ejemplo que haga uso de Spread
+const mensaje = mensaje_parcial("hola")
+console.log(mensaje("mundo"))
 
+console.log("\n\nEjercicio 8")
+// 8. Implementa un ejemplo que haga uso de Spread 
+function ejemplo_spread(a,b,c,d){
+    return a+b+c+d
+} 
+
+let numbers1 = [1,2,3]
+let numbers2 = [1,2,3,4]
+let numbers3 = [1,2,3,5,6]
+
+console.log(ejemplo_spread(...numbers1))
+console.log(ejemplo_spread(...numbers2))
+console.log(ejemplo_spread(...numbers3))
+
+console.log("\n\nEjercicio 9")
 // 9. Implementa un retorno implícito
+const suma = (a,b) => a + b
+console.log(suma(4,5))
 
+console.log("\n\nEjercicio 10")
 // 10. Haz uso del this léxico
+const thislexico = {
+    operando1: 5,
+    operacion: function (){
+        console.log(5+ this.operando1)
+    }
+}
+thislexico.operacion()
